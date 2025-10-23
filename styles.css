@@ -1,0 +1,58 @@
+/* Cascade Style Sheet (CSS) */
+/*  */
+/* Box Model. Las dimensiones de cada elemento en nuestro documento (DOM) */
+
+/* FlexBox. Acomoda los elementos de forma horizontal y vertical*/
+/* 1. Order de forma horizontal los elemtnos */
+
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+/*  230px
+    480px
+    720px
+    960px
+    1200px */
+@media (max-width: 720px) {
+    ul {
+        flex-direction: column;
+    }
+
+}
+
+/* Grids. Genera una cuadricula dentro del DOM */
+/* .nosotros{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 40px;
+    column-gap: 150px;
+    row-gap: 150px;
+} */
+
+.nosotros {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-areas:
+
+        "nosotros__item1 nosotros__item3"
+        "nosotros__item2 nosotros__item4";
+
+
+}
+
+.nosotros__item1 {
+    grid-area: nosotros__item1;
+}
+.nosotros__item4{
+    grid-area: nosotros__item3;
+}
+.nosotros__item2 {
+    grid-area: nosotros__item4;
+}
+.nosotros__item3{
+    grid-area: nosotros__item2;
+}
